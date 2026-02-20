@@ -1,17 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Scroll Animation</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durga Dharshini | Resume Portfolio</title>
+
+<style>
+:root {
+  --primary: #0f172a;
+  --accent: #2563eb;
+  --text: #1f2933;
+  --bg: #f8fafc;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Animated background */
+#animation-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+#animation-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Main content */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+header .contact {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* Sections */
+section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+section p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Projects */
+.project {
+  margin-bottom: 25px;
+}
+
+.project h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+/* Skills */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.skill {
+  padding: 10px 14px;
+  background: #e0e7ff;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Scroll space -->
-  <div class="scroll-container">
-    <canvas id="animationCanvas"></canvas>
+<!-- Scroll animation background -->
+<div id="animation-bg">
+  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="background animation">
+</div>
+
+<div class="container">
+
+<header>
+  <h1>Durga Dharshini</h1>
+  <p>Core Electronics Job Aspirant (2023 – 2027)</p>
+  <div class="contact">
+    📞 9788494169 &nbsp; | &nbsp; ✉️ durgadharshini532@gmail.com <br>
+    📍 65A/4E, Kalaiarangam Street, Vallioor
+  </div>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I'm Durga Dharshini, a motivated and detail-oriented Electronics and Communication Engineering student with
+    strong academic performance and a passion for embedded systems, IoT, and circuit design.
+    I am eager to apply theoretical knowledge in real-world applications through internships
+    or entry-level opportunities.
+  </p>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p>
+    <strong>Government College of Engineering – Tirunelveli</strong><br>
+    Bachelor of Electronics and Communication Engineering<br>
+    <em>2023 – 2027</em>
+  </p>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>Night Street Lamp – Modern House Implementation</h3>
+    <p>
+      Designed and implemented an automatic lighting system that activates in the absence of ambient light
+      using an LDR (Light Dependent Resistor) and a transistor-based switching circuit.
+      The system switches ON an LED or AC bulb through a relay and turns OFF automatically in daylight.
+      Demonstrates knowledge in sensor-based automation, analog electronics, and energy-efficient design.
+    </p>
   </div>
 
-  <script src="script.js"></script>
+  <div class="project">
+    <h3>Water Level Indicator for Water Tanks</h3>
+    <p>
+      Designed and built a simple water level monitoring system using NPN transistors (BC547) and resistors.
+      Conductivity of water is used to trigger transistor-based circuits, lighting LEDs to indicate
+      low, medium, high, and full tank levels.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>Automatic Cloth Collector Using Rain Drop Sensor</h3>
+    <p>
+      Developed a smart system to protect clothes drying outdoors from unexpected rainfall.
+      A rain sensor detects precipitation and automatically retracts the clothesline using
+      a motorized mechanism. Demonstrates embedded systems, automation, and real-life problem solving.
+    </p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Basic Python</div>
+    <div class="skill">Analytics</div>
+    <div class="skill">Problem Solving</div>
+    <div class="skill">Teamwork</div>
+    <div class="skill">Communication</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Durga Dharshini · Resume Portfolio
+</footer>
+
+</div>
+
+<script>
+const frame = document.getElementById("frame");
+const totalFrames = 240;
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / docHeight;
+  const frameIndex = Math.min(
+    totalFrames - 1,
+    Math.floor(scrollFraction * totalFrames)
+  ) + 1;
+
+  const frameNumber = String(frameIndex).padStart(3, "0");
+  frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+});
+</script>
+
 </body>
 </html>
