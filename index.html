@@ -6,6 +6,7 @@
 <title>Durga Dharshini | Resume Portfolio</title>
 
 <style>
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +14,15 @@
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
-/* ===== DARK MODE BASE ===== */
+/* ================= DARK BASE ================= */
 body {
-  background: #05070d;
+  background: #05060a;
   color: #e5e7eb;
   overflow-x: hidden;
-  padding-top: 36px;
+  padding: 40px 0;
 }
 
-/* ===== SCROLL ANIMATION BACKGROUND ===== */
+/* ================= BACKGROUND SCROLL ANIMATION ================= */
 #animation-bg {
   position: fixed;
   inset: 0;
@@ -33,30 +34,30 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.38;             /* HIGH VISIBILITY */
-  filter: brightness(0.8);  /* keep dark theme */
+  opacity: 0.38;          /* watermark visibility */
+  filter: brightness(0.8);
 }
 
-/* ===== CONTENT LAYER ===== */
+/* ================= CONTENT LAYER ================= */
 .container {
   position: relative;
   z-index: 1;
   max-width: 900px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 22px;
 }
 
-/* ===== TEXT READABILITY (NO BOXES) ===== */
-h1, h2, p, li {
+/* ================= TEXT READABILITY (NO BOXES) ================= */
+h1, h2, h3, p, li {
   text-shadow:
-    0 0 8px rgba(0,0,0,0.9),
-    0 0 14px rgba(0,0,0,0.7);
+    0 0 10px rgba(0,0,0,0.95),
+    0 0 18px rgba(0,0,0,0.8);
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 header h1 {
@@ -66,59 +67,59 @@ header h1 {
 }
 
 header p {
-  margin-top: 6px;
-  font-size: 1.1rem;
-  color: #cbd5f5;
+  margin-top: 8px;
+  font-size: 1.15rem;
+  color: #c7d2fe;
 }
 
 header .contact {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 0.95rem;
-  color: #e5e7eb;
 }
 
-/* ===== SECTIONS (FULLY TRANSPARENT) ===== */
+/* ================= SECTIONS ================= */
 section {
-  margin-bottom: 46px;
-  background: none !important;
-  border: none !important;
-  padding: 0;
+  margin-bottom: 55px;
 }
 
 section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 1.7rem;
+  margin-bottom: 14px;
   color: #60a5fa;
 }
 
-/* ===== TEXT ===== */
+/* ================= TEXT ================= */
 section p {
   font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 14px;
+  line-height: 1.85;
+  margin-bottom: 16px;
 }
 
-/* ===== SKILLS ===== */
+/* ================= PROJECT TITLE ================= */
+.project-title {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* ================= SKILLS ================= */
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .skill {
-  padding: 6px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.25);
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
   background: transparent;
-  color: #f1f5f9;
   font-size: 0.95rem;
-  text-shadow: 0 0 6px rgba(0,0,0,0.8);
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
-  margin: 30px 0 20px;
+  margin-top: 40px;
   font-size: 0.85rem;
   color: #cbd5f5;
 }
@@ -129,7 +130,7 @@ footer {
 
 <!-- BACKGROUND ANIMATION -->
 <div id="animation-bg">
-  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="animated background">
+  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="Animated Background">
 </div>
 
 <div class="container">
@@ -164,16 +165,23 @@ footer {
 
 <section>
   <h2>Projects</h2>
-  <p><strong>Night Street Lamp – Modern House Implementation</strong><br>
-    Automatic lighting system using LDR and transistor-based switching for energy efficiency.
+
+  <p class="project-title">Night Street Lamp – Modern House Implementation</p>
+  <p>
+    Designed and implemented an automatic lighting system using an LDR and transistor-based switching circuit.
+    The system turns ON in low light and OFF automatically during daylight.
   </p>
 
-  <p><strong>Water Level Indicator for Water Tanks</strong><br>
-    Transistor-based system to indicate water levels using LEDs.
+  <p class="project-title">Water Level Indicator for Water Tanks</p>
+  <p>
+    Designed a transistor-based water level monitoring system using BC547 transistors and LEDs
+    to indicate low, medium, high, and full tank levels.
   </p>
 
-  <p><strong>Automatic Cloth Collector Using Rain Drop Sensor</strong><br>
-    Smart rain-detection system that retracts clothes automatically using a motor mechanism.
+  <p class="project-title">Automatic Cloth Collector Using Rain Drop Sensor</p>
+  <p>
+    Developed a smart rain-detection system that automatically retracts clothes using
+    a motorized mechanism, preventing damage from unexpected rainfall.
   </p>
 </section>
 
@@ -194,17 +202,38 @@ footer {
 
 </div>
 
+<!-- ================= SMOOTH & FAST SCROLL SCRIPT ================= -->
 <script>
-const frame = document.getElementById("frame");
+const frameImg = document.getElementById("frame");
 const totalFrames = 240;
+
+// SPEED CONTROL (increase = faster)
+const SPEED = 1.8;
+
+let currentFrame = 1;
+let targetFrame = 1;
+let ticking = false;
+
+function updateFrame() {
+  currentFrame += (targetFrame - currentFrame) * 0.18;
+  const frameNumber = Math.round(currentFrame);
+  frameImg.src = `frames/ezgif-frame-${String(frameNumber).padStart(3, "0")}.jpg`;
+  ticking = false;
+}
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / docHeight;
-  const frameIndex = Math.min(totalFrames - 1, Math.floor(scrollFraction * totalFrames)) + 1;
-  const frameNumber = String(frameIndex).padStart(3, "0");
-  frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+  let scrollFraction = scrollTop / maxScroll;
+  scrollFraction = Math.min(Math.max(scrollFraction * SPEED, 0), 1);
+
+  targetFrame = scrollFraction * (totalFrames - 1) + 1;
+
+  if (!ticking) {
+    requestAnimationFrame(updateFrame);
+    ticking = true;
+  }
 });
 </script>
 
