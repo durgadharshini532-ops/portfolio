@@ -6,12 +6,6 @@
 <title>Durga Dharshini | Resume Portfolio</title>
 
 <style>
-:root {
-  --text-color: #0f172a;
-  --accent-color: #2563eb;
-}
-
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -20,10 +14,10 @@
 }
 
 body {
-  background: #ffffff;
-  color: var(--text-color);
   overflow-x: hidden;
-  padding-top: 40px;
+  color: #0f172a;
+  background: #fff;
+  padding-top: 32px;
 }
 
 /* Background animation */
@@ -34,111 +28,103 @@ body {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.30; /* make stronger background visible */
 }
 
 #animation-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.32;
 }
 
 /* Main container */
 .container {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
+  z-index: 1;
+  max-width: 860px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 18px;
 }
 
 /* Text shadow for readability */
-h1, h2, h3, p, li {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.20);
+h1, h2, p {
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6),
+               0 2px 8px rgba(0, 0, 0, 0.32);
 }
 
 /* Header */
 header {
   text-align: center;
-  margin-bottom: 60px;
-  background: none; /* no card */
+  margin-bottom: 48px;
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 2.9rem;
   font-weight: 700;
 }
 
 header p {
-  margin-top: 8px;
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.05rem;
+  margin-top: 6px;
 }
 
 header .contact {
-  margin-top: 10px;
-  font-size: 0.95rem;
+  margin-top: 8px;
+  font-size: 0.88rem;
 }
 
 /* Sections */
 section {
-  margin-bottom: 40px;
-  background: none; /* fully transparent */
-  border: none;
+  margin-bottom: 36px;
+  background: none !important; /* no colored box */
+  border: none !important;
+  padding: 0;
 }
 
 section h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin-bottom: 8px;
-  color: var(--accent-color);
-  background: none;
+  color: #2563eb;
+  opacity: 0.96;
 }
 
-/* Paragraphs & lists */
-section p, section li {
+/* Paragraph text */
+section p {
   font-size: 1rem;
   line-height: 1.7;
-  background: none;
+  margin-bottom: 16px;
 }
 
-/* Lists */
-ul {
-  margin-left: 24px;
-  margin-top: 8px;
-}
-
-/* Skills grid */
+/* Skill list plain */
 .skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-top: 8px;
+  font-size: 1rem;
 }
 
 .skill {
-  padding: 8px 12px;
-  background: rgba(255,255,255,0.12); /* slight highlight */
+  padding: 6px 10px;
   border-radius: 12px;
-  color: var(--text-color);
-  text-align: center;
-  font-size: 0.95rem;
-  backdrop-filter: blur(3px);
+  background: none !important;
+  border: 1px solid rgba(255,255,255,0.6);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.32);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 30px;
-  font-size: 0.85rem;
-  color: #555;
-  background: none;
+  margin-top: 28px;
+  font-size: 0.82rem;
+  opacity: 0.85;
 }
 </style>
 </head>
+
 <body>
 
 <div id="animation-bg">
-  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="animated background">
+  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="Animated background">
 </div>
 
 <div class="container">
@@ -153,36 +139,19 @@ footer {
 
 <section>
   <h2>About Me</h2>
-  <p>
-    I'm Durga Dharshini, a motivated and detail-oriented Electronics and Communication Engineering student
-    with strong academic performance and a passion for embedded systems, IoT, and circuit design. I am eager
-    to apply theoretical knowledge in real-world applications through internships or entry-level opportunities.
-  </p>
+  <p>I'm Durga Dharshini, a motivated and detail-oriented Electronics and Communication Engineering student with strong academic performance and a passion for embedded systems, IoT, and circuit design. I am eager to apply theoretical knowledge in real-world applications through internships or entry-level opportunities.</p>
 </section>
 
 <section>
   <h2>Education</h2>
-  <p>
-    <strong>Government College of Engineering – Tirunelveli</strong><br>
-    Bachelor of Electronics and Communication Engineering<br>
-    <em>2023 – 2027</em>
-  </p>
+  <p><strong>Government College of Engineering – Tirunelveli</strong><br>Bachelor of Electronics and Communication Engineering<br><em>2023 – 2027</em></p>
 </section>
 
 <section>
   <h2>Projects</h2>
-
-  <p><strong>Night Street Lamp – Modern House Implementation</strong><br>
-  Designed and implemented an automatic lighting system that activates in the absence of ambient light using an LDR…
-  </p>
-
-  <p><strong>Water Level Indicator for Water Tanks</strong><br>
-  Designed and built a simple water level monitoring system using NPN transistors and LEDs to indicate tank levels.
-  </p>
-
-  <p><strong>Automatic Cloth Collector Using Rain Drop Sensor</strong><br>
-  Developed a smart system that automatically retracts clothes from rain using a rain detection mechanism.
-  </p>
+  <p><strong>Night Street Lamp – Modern House Implementation</strong><br>Designed and implemented an automatic lighting system that activates in the absence of ambient light using an LDR and switching circuit.</p>
+  <p><strong>Water Level Indicator for Water Tanks</strong><br>Designed and built a water-level monitor using transistor circuits for level indication LEDs.</p>
+  <p><strong>Automatic Cloth Collector Using Rain Drop Sensor</strong><br>A rain sensor detects precipitation and automatically retracts a clothesline using a motor.</p>
 </section>
 
 <section>
@@ -197,7 +166,6 @@ footer {
 </section>
 
 <footer>© 2026 Durga Dharshini · Resume Portfolio</footer>
-
 </div>
 
 <script>
