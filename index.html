@@ -25,9 +25,10 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
+  padding-top: 40px;
 }
 
-/* Animated background */
+/* Background animation */
 #animation-bg {
   position: fixed;
   top: 0;
@@ -36,7 +37,7 @@ body {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.22;
 }
 
 #animation-bg img {
@@ -45,19 +46,24 @@ body {
   object-fit: cover;
 }
 
-/* Main content */
+/* Container */
 .container {
   position: relative;
   z-index: 2;
   max-width: 900px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 0 20px;
+}
+
+/* Text readability */
+h1, h2, h3, p, li {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 /* Header */
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 header h1 {
@@ -67,78 +73,67 @@ header h1 {
 }
 
 header p {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 1.1rem;
   color: #475569;
 }
 
 header .contact {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 0.95rem;
 }
 
-/* Sections */
+/* Section styling */
 section {
   margin-bottom: 50px;
-  padding: 30px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 6px 0;
+  background: transparent;
+  border: none;
 }
 
 section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
   color: var(--accent);
 }
 
-section p {
-  line-height: 1.7;
+section p, section li {
   font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* Lists */
 ul {
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-left: 24px;
+  margin-top: 8px;
 }
 
 li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-/* Projects */
-.project {
-  margin-bottom: 25px;
-}
-
-.project h3 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-  color: var(--primary);
+  margin-bottom: 8px;
 }
 
 /* Skills */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .skill {
-  padding: 10px 14px;
-  background: #e0e7ff;
-  border-radius: 20px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 14px;
+  font-size: 0.95rem;
   text-align: center;
-  font-size: 0.9rem;
+  color: var(--primary);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 0.85rem;
   color: #64748b;
 }
@@ -147,9 +142,9 @@ footer {
 
 <body>
 
-<!-- Scroll animation background -->
+<!-- Scroll background animation -->
 <div id="animation-bg">
-  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="background animation">
+  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="animated background">
 </div>
 
 <div class="container">
@@ -166,10 +161,9 @@ footer {
 <section>
   <h2>About Me</h2>
   <p>
-    I'm Durga Dharshini, a motivated and detail-oriented Electronics and Communication Engineering student with
-    strong academic performance and a passion for embedded systems, IoT, and circuit design.
-    I am eager to apply theoretical knowledge in real-world applications through internships
-    or entry-level opportunities.
+    I'm Durga Dharshini, a motivated and detail-oriented Electronics and Communication Engineering student
+    with strong academic performance and a passion for embedded systems, IoT, and circuit design. I am eager
+    to apply theoretical knowledge in real-world applications through internships or entry-level opportunities.
   </p>
 </section>
 
@@ -185,34 +179,17 @@ footer {
 <section>
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Night Street Lamp – Modern House Implementation</h3>
-    <p>
-      Designed and implemented an automatic lighting system that activates in the absence of ambient light
-      using an LDR (Light Dependent Resistor) and a transistor-based switching circuit.
-      The system switches ON an LED or AC bulb through a relay and turns OFF automatically in daylight.
-      Demonstrates knowledge in sensor-based automation, analog electronics, and energy-efficient design.
-    </p>
-  </div>
+  <p><strong>Night Street Lamp – Modern House Implementation</strong><br>
+  Designed and implemented an automatic lighting system that activates in the absence of ambient light using an…
+  </p>
 
-  <div class="project">
-    <h3>Water Level Indicator for Water Tanks</h3>
-    <p>
-      Designed and built a simple water level monitoring system using NPN transistors (BC547) and resistors.
-      Conductivity of water is used to trigger transistor-based circuits, lighting LEDs to indicate
-      low, medium, high, and full tank levels.
-    </p>
-  </div>
+  <p><strong>Water Level Indicator for Water Tanks</strong><br>
+  Designed and built a simple water level monitoring system using NPN transistors and LEDs to indicate tank water levels.
+  </p>
 
-  <div class="project">
-    <h3>Automatic Cloth Collector Using Rain Drop Sensor</h3>
-    <p>
-      Developed a smart system to protect clothes drying outdoors from unexpected rainfall.
-      A rain sensor detects precipitation and automatically retracts the clothesline using
-      a motorized mechanism. Demonstrates embedded systems, automation, and real-life problem solving.
-    </p>
-  </div>
-
+  <p><strong>Automatic Cloth Collector Using Rain Drop Sensor</strong><br>
+  Developed a smart system that automatically retracts clothes from rain using a rain sensor and motor mechanism.
+  </p>
 </section>
 
 <section>
@@ -226,9 +203,7 @@ footer {
   </div>
 </section>
 
-<footer>
-  © 2026 Durga Dharshini · Resume Portfolio
-</footer>
+<footer>© 2026 Durga Dharshini · Resume Portfolio</footer>
 
 </div>
 
@@ -240,11 +215,7 @@ window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / docHeight;
-  const frameIndex = Math.min(
-    totalFrames - 1,
-    Math.floor(scrollFraction * totalFrames)
-  ) + 1;
-
+  const frameIndex = Math.min(totalFrames - 1, Math.floor(scrollFraction * totalFrames)) + 1;
   const frameNumber = String(frameIndex).padStart(3, "0");
   frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
 });
