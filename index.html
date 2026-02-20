@@ -7,10 +7,8 @@
 
 <style>
 :root {
-  --primary: #0f172a;
-  --accent: #2563eb;
-  --text: #1f2933;
-  --bg: #f8fafc;
+  --text-color: #0f172a;
+  --accent-color: #2563eb;
 }
 
 /* Reset */
@@ -18,12 +16,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: #ffffff;
+  color: var(--text-color);
   overflow-x: hidden;
   padding-top: 40px;
 }
@@ -31,13 +29,12 @@ body {
 /* Background animation */
 #animation-bg {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.22;
+  opacity: 0.30; /* make stronger background visible */
 }
 
 #animation-bg img {
@@ -46,7 +43,7 @@ body {
   object-fit: cover;
 }
 
-/* Container */
+/* Main container */
 .container {
   position: relative;
   z-index: 2;
@@ -55,27 +52,27 @@ body {
   padding: 0 20px;
 }
 
-/* Text readability */
+/* Text shadow for readability */
 h1, h2, h3, p, li {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.20);
 }
 
 /* Header */
 header {
   text-align: center;
   margin-bottom: 60px;
+  background: none; /* no card */
 }
 
 header h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--primary);
 }
 
 header p {
   margin-top: 8px;
   font-size: 1.1rem;
-  color: #475569;
+  color: #444;
 }
 
 header .contact {
@@ -83,23 +80,25 @@ header .contact {
   font-size: 0.95rem;
 }
 
-/* Section styling */
+/* Sections */
 section {
-  margin-bottom: 50px;
-  padding: 6px 0;
-  background: transparent;
+  margin-bottom: 40px;
+  background: none; /* fully transparent */
   border: none;
 }
 
 section h2 {
   font-size: 1.6rem;
   margin-bottom: 8px;
-  color: var(--accent);
+  color: var(--accent-color);
+  background: none;
 }
 
+/* Paragraphs & lists */
 section p, section li {
   font-size: 1rem;
   line-height: 1.7;
+  background: none;
 }
 
 /* Lists */
@@ -108,26 +107,22 @@ ul {
   margin-top: 8px;
 }
 
-li {
-  margin-bottom: 8px;
-}
-
-/* Skills */
+/* Skills grid */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 8px;
   margin-top: 8px;
 }
 
 .skill {
   padding: 8px 12px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(4px);
-  border-radius: 14px;
-  font-size: 0.95rem;
+  background: rgba(255,255,255,0.12); /* slight highlight */
+  border-radius: 12px;
+  color: var(--text-color);
   text-align: center;
-  color: var(--primary);
+  font-size: 0.95rem;
+  backdrop-filter: blur(3px);
 }
 
 /* Footer */
@@ -135,20 +130,18 @@ footer {
   text-align: center;
   margin-top: 30px;
   font-size: 0.85rem;
-  color: #64748b;
+  color: #555;
+  background: none;
 }
 </style>
 </head>
-
 <body>
 
-<!-- Scroll background animation -->
 <div id="animation-bg">
   <img id="frame" src="frames/ezgif-frame-001.jpg" alt="animated background">
 </div>
 
 <div class="container">
-
 <header>
   <h1>Durga Dharshini</h1>
   <p>Core Electronics Job Aspirant (2023 – 2027)</p>
@@ -180,15 +173,15 @@ footer {
   <h2>Projects</h2>
 
   <p><strong>Night Street Lamp – Modern House Implementation</strong><br>
-  Designed and implemented an automatic lighting system that activates in the absence of ambient light using an…
+  Designed and implemented an automatic lighting system that activates in the absence of ambient light using an LDR…
   </p>
 
   <p><strong>Water Level Indicator for Water Tanks</strong><br>
-  Designed and built a simple water level monitoring system using NPN transistors and LEDs to indicate tank water levels.
+  Designed and built a simple water level monitoring system using NPN transistors and LEDs to indicate tank levels.
   </p>
 
   <p><strong>Automatic Cloth Collector Using Rain Drop Sensor</strong><br>
-  Developed a smart system that automatically retracts clothes from rain using a rain sensor and motor mechanism.
+  Developed a smart system that automatically retracts clothes from rain using a rain detection mechanism.
   </p>
 </section>
 
@@ -214,7 +207,7 @@ const totalFrames = 240;
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / docHeight;
+  const scrollFraction = (scrollTop / docHeight);
   const frameIndex = Math.min(totalFrames - 1, Math.floor(scrollFraction * totalFrames)) + 1;
   const frameNumber = String(frameIndex).padStart(3, "0");
   frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
